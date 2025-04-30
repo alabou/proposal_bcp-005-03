@@ -232,10 +232,6 @@ The effective values of the read-only IS-05 `ext_privacy` transport parameters `
 
 The values of the parameters of the `privacy` attribute of the SDP transport file of an active Sender MUST match the values of the active `ext_privacy` transport parameters of that active Sender.
 
-It is important to consider this requirement of [IS-05][] [Re-Activating Senders & Receivers](https://specs.amwa.tv/is-05/releases/v1.1.2/docs/Behaviour.html#re-activating-senders--receivers) that states:
-
-> "If an explicit activation is performed against a Sender or Receiver, the API MUST request a re-application of settings to the underlying Sender or Receiver implementation whether the settings have changed or not. For example, in the case of multicast Receivers, it is suggested that this involves an explicit IGMP leave and join. For a Sender, this might involve stopping and re-starting the stream."
-
 The [TR-10-13][] expression "becomes inactive", in the context of the ECDH private/public keys pair, MUST be interpreted as an activation with `master_enable` set to `false`, resulting in `master_enable` remaining or becoming `false` at the `active` endpoint of a Sender.
 
 The [TR-10-13][] expression "becomes inactive", in other contexts, MUST be interpreted as either (a) internally becoming momentarily inactive during an activation with `master_enable` set to `true`, resulting in `master_enable` remaining `true` at the `active` endpoint of a Sender (re-activation), or (b) becoming inactive during an activation with `master_enable` set to `false`, resulting in `master_enable` remaining or becoming `false` at the `active` endpoint of a Sender (de-activation).
@@ -261,10 +257,6 @@ With ECDH, a Controller MUST exchange the Sender and Receiver public keys to act
 ### IS-05 Receiver activation
 
 For transports supporting an SDP transport file, if the ECDH mode is not used, the process of activating a Receiver is the same with and without privacy encryption. A Controller SHOULD retrieve the SDP transport file of a Sender and provide it to the Receivers at activation. The privacy encryption parameters of the Sender are automatically taken from the SDP transport file.
-
-It is important to consider this requirement of [IS-05][] [Re-Activating Senders & Receivers](https://specs.amwa.tv/is-05/releases/v1.1.2/docs/Behaviour.html#re-activating-senders--receivers) that states:
-
-> "If an explicit activation is performed against a Sender or Receiver, the API MUST request a re-application of settings to the underlying Sender or Receiver implementation whether the settings have changed or not. For example, in the case of multicast Receivers, it is suggested that this involves an explicit IGMP leave and join. For a Sender, this might involve stopping and re-starting the stream."
 
 The [TR-10-13][] expression "becomes inactive", in the context of the ECDH private/public keys pair, MUST be interpreted as an activation with `master_enable` set to `false`, resulting in `master_enable` remaining or becoming `false` at the `active` endpoint of a Receiver.
 
