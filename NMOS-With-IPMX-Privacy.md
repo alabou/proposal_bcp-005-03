@@ -1,4 +1,4 @@
-# NMOS With IPMX Privacy Encryption
+# AMWA BCP-005-03: NMOS With IPMX Privacy Encryption
 {:.no_toc}  
 Copyright 2023, Matrox Graphics Inc.
 
